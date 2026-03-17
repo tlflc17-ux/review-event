@@ -15,6 +15,7 @@
       --navy: #101a2e;
       --navy-soft: #18263d;
       --white: #ffffff;
+      --bg: #f5f7fb;
       --text: #142033;
       --muted: #6b7280;
       --line: rgba(16, 26, 46, 0.08);
@@ -28,17 +29,25 @@
       --google-green: #0F9D58;
       --radius-xl: 28px;
       --radius-lg: 22px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
       --container: 480px;
     }
 
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background:
-        radial-gradient(circle at top right, rgba(226, 0, 26, 0.08), transparent 22%),
+        radial-gradient(circle at top right, rgba(39, 174, 96, 0.10), transparent 22%),
         linear-gradient(180deg, #fbfcff 0%, #f4f7fb 100%);
       color: var(--text);
       line-height: 1.6;
@@ -51,7 +60,9 @@
       overflow-x: hidden;
     }
 
-    .section { padding: 18px 18px 6px; }
+    .section {
+      padding: 18px 18px 6px;
+    }
 
     .fade-in {
       opacity: 0;
@@ -73,7 +84,7 @@
       color: var(--white);
       border-bottom-left-radius: 34px;
       border-bottom-right-radius: 34px;
-      box-shadow: 0 20px 40px rgba(226, 0, 26, 0.24);
+      box-shadow: 0 20px 40px rgba(39, 174, 96, 0.24);
     }
 
     .hero::before,
@@ -84,8 +95,19 @@
       background: rgba(255,255,255,0.08);
     }
 
-    .hero::before { width: 220px; height: 220px; top: -90px; right: -100px; }
-    .hero::after { width: 150px; height: 150px; bottom: -45px; left: -45px; }
+    .hero::before {
+      width: 220px;
+      height: 220px;
+      top: -90px;
+      right: -100px;
+    }
+
+    .hero::after {
+      width: 150px;
+      height: 150px;
+      bottom: -45px;
+      left: -45px;
+    }
 
     .hero-card {
       position: relative;
@@ -113,7 +135,11 @@
       opacity: .96;
     }
 
-    .hero p { margin: 0; font-size: 0.97rem; opacity: .96; }
+    .hero p {
+      margin: 0;
+      font-size: 0.97rem;
+      opacity: .96;
+    }
 
     .card {
       background: rgba(255,255,255,0.86);
@@ -161,7 +187,8 @@
       border: 1px solid rgba(226,0,26,0.12);
     }
 
-    .intro-list, .prize-list {
+    .intro-list,
+    .prize-list {
       display: grid;
       gap: 10px;
       margin-top: 14px;
@@ -178,7 +205,9 @@
       font-size: 0.92rem;
     }
 
-    .emoji { flex: 0 0 auto; }
+    .emoji {
+      flex: 0 0 auto;
+    }
 
     .cta-box {
       position: relative;
@@ -210,7 +239,8 @@
       font-weight: 700;
     }
 
-    .review-btn, .secondary-btn {
+    .review-btn,
+    .secondary-btn {
       display: inline-flex;
       width: 100%;
       justify-content: center;
@@ -243,7 +273,10 @@
       border: 1px solid rgba(255,255,255,0.16);
     }
 
-    .review-btn:hover, .review-btn:active, .secondary-btn:hover, .secondary-btn:active {
+    .review-btn:hover,
+    .review-btn:active,
+    .secondary-btn:hover,
+    .secondary-btn:active {
       transform: translateY(-2px) scale(1.01);
       filter: saturate(1.05);
     }
@@ -255,7 +288,11 @@
       font-size: .8rem;
     }
 
-    .steps, .missions { display: grid; gap: 12px; }
+    .steps,
+    .missions {
+      display: grid;
+      gap: 12px;
+    }
 
     .step-card {
       display: grid;
@@ -280,8 +317,18 @@
       box-shadow: 0 10px 20px rgba(226,0,26,0.2);
     }
 
-    .step-card strong { display: block; color: var(--navy); margin-bottom: 2px; font-size: .98rem; }
-    .step-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .step-card strong {
+      display: block;
+      color: var(--navy);
+      margin-bottom: 2px;
+      font-size: .98rem;
+    }
+
+    .step-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
 
     .mission-card {
       position: relative;
@@ -371,7 +418,11 @@
       color: var(--navy);
     }
 
-    .note { margin-top: 12px; color: var(--muted); font-size: .82rem; }
+    .note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
 
     .gold-section {
       animation: goldGlow 2.4s ease-in-out infinite;
@@ -384,15 +435,27 @@
       box-shadow: 0 18px 34px rgba(255,174,0,0.24);
     }
 
-    .gold-section::before, .gold-section::after {
+    .gold-section::before,
+    .gold-section::after {
       content: "";
       position: absolute;
       border-radius: 50%;
       background: rgba(255,255,255,0.22);
     }
 
-    .gold-section::before { width: 150px; height: 150px; top: -40px; right: -40px; }
-    .gold-section::after { width: 100px; height: 100px; bottom: -30px; left: -20px; }
+    .gold-section::before {
+      width: 150px;
+      height: 150px;
+      top: -40px;
+      right: -40px;
+    }
+
+    .gold-section::after {
+      width: 100px;
+      height: 100px;
+      bottom: -30px;
+      left: -20px;
+    }
 
     .gold-section .section-title,
     .gold-section .section-subtitle,
@@ -405,8 +468,15 @@
       z-index: 1;
     }
 
-    .gold-section .section-title { color: #4b2c00; }
-    .gold-section .mini-item { background: rgba(255,255,255,0.36); border: 1px solid rgba(120,74,0,0.12); color: #4a3005; }
+    .gold-section .section-title {
+      color: #4b2c00;
+    }
+
+    .gold-section .mini-item {
+      background: rgba(255,255,255,0.36);
+      border: 1px solid rgba(120,74,0,0.12);
+      color: #4a3005;
+    }
 
     .gold-highlight {
       margin-top: 14px;
@@ -464,140 +534,6 @@
       font-size: .9rem;
     }
 
-    .lucky-card {
-      padding: 15px 16px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fff, #fffdf5);
-      border: 1px solid rgba(255,190,0,0.22);
-      box-shadow: 0 10px 22px rgba(255,190,0,0.08);
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .hint-box {
-      position: relative;
-      overflow: hidden;
-      padding: 22px 18px;
-      border-radius: 26px;
-      background: linear-gradient(160deg, #111827 0%, #1f2937 100%);
-      color: #f9fafb;
-      box-shadow: var(--shadow);
-    }
-
-    .hint-box::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 30%, rgba(255,215,0,0.12), transparent 20%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08), transparent 18%),
-        radial-gradient(circle at 60% 80%, rgba(255,215,0,0.09), transparent 22%);
-      pointer-events: none;
-    }
-
-    .hint-box .section-title, .hint-box p, .detective { position: relative; z-index: 1; }
-
-    .detective {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 16px;
-    }
-
-    .magnifier, .treasure-mark {
-      width: 70px;
-      height: 70px;
-      position: relative;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.09);
-    }
-
-    .magnifier::before {
-      content: "";
-      position: absolute;
-      width: 28px;
-      height: 28px;
-      border: 5px solid var(--gold);
-      border-radius: 50%;
-      left: 16px;
-      top: 14px;
-    }
-
-    .magnifier::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 999px;
-      transform: rotate(45deg);
-      right: 14px;
-      bottom: 17px;
-    }
-
-    .treasure-mark::before {
-      content: "X";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--gold);
-      letter-spacing: .08em;
-    }
-
-    .verify-box {
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      border-radius: 24px;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-soft);
-      padding: 18px;
-    }
-
-    .verify-grid {
-      display: grid;
-      gap: 10px;
-    }
-
-    .verify-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 50px;
-      border: 0;
-      border-radius: 16px;
-      font-weight: 800;
-      font-size: .94rem;
-      cursor: pointer;
-      transition: transform .18s ease, filter .18s ease;
-      background: var(--navy);
-      color: #fff;
-    }
-
-    .verify-btn.alt {
-      background: rgba(16,26,46,0.06);
-      color: var(--navy);
-      border: 1px solid rgba(16,26,46,0.08);
-    }
-
-    .verify-btn:active, .verify-btn:hover { transform: translateY(-1px); }
-
-    .verify-status {
-      margin-top: 12px;
-      padding: 12px 13px;
-      border-radius: 14px;
-      font-size: .88rem;
-      font-weight: 700;
-      display: none;
-    }
-
-    .verify-status.show { display: block; }
-    .verify-status.ok { background: rgba(15,157,88,0.10); color: #0d6b3d; border: 1px solid rgba(15,157,88,0.14); }
-    .verify-status.warn { background: rgba(255,166,0,0.12); color: #8b5a00; border: 1px solid rgba(255,166,0,0.16); }
-
     .footer {
       padding: 30px 18px 42px;
       text-align: center;
@@ -612,11 +548,8 @@
       font-size: .95rem;
     }
 
-    .hidden { display: none !important; }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+    .hidden {
+      display: none !important;
     }
 
     @keyframes goldGlow {
@@ -638,12 +571,14 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .fade-in, .fade-in.visible {
+      .fade-in,
+      .fade-in.visible {
         transition: none !important;
         transform: none !important;
         opacity: 1 !important;
       }
-      .gold-section, .confetti-piece {
+      .gold-section,
+      .confetti-piece {
         animation: none !important;
       }
     }
@@ -679,6 +614,7 @@
         <p>⬇️ 아래 버튼을 눌러 리뷰를 작성해 주세요.</p>
         <a
           class="review-btn"
+          id="reviewLink"
           href="https://www.google.com/travel/search?q=%EC%9D%B4%EB%B9%84%EC%8A%A4%20%EC%8A%A4%ED%83%80%EC%9D%BC%20%EC%95%B0%EB%B0%B0%EC%84%9C%EB%8D%94%20%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764&hl=ko-SG&gl=sg&authuser=1&ssta=1&ts=CAEaRwopEicyJTB4MzU3Y2EzZmI1MDZiM2RkMzoweGE3ZGM2ODljZjRjMDI1NjISGhIUCgcI6g8QAxgWEgcI6g8QAxgXGAEyAhAA&qs=CAEyFENnc0k0c3FBcHMtVG11Nm5BUkFCOAJCCQliJcD0nGjcp0IJCWIlwPScaNyn&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwjI25Tsz6STAxUAAAAAHQAAAAAQBQ"
           target="_blank"
           rel="noopener noreferrer"
@@ -752,7 +688,7 @@
         <div class="mini-item"><span class="emoji">✨</span><span>Golden QR은 호텔 내 단 한 곳에만 숨겨져 있습니다.</span></div>
         <div class="intro-list" style="margin-top:12px;">
           <div class="mini-item"><span class="emoji">🎬</span><span><strong>특별 혜택</strong><br />Monoplex 영화 티켓 2매 제공</span></div>
-          <div class="mini-item"><span class="emoji">🎁</span><span><strong>공통 혜택</strong><br />Golden QR 참여 고객도 QR 럭키드로우에 도전할 수 있습니다.</span></div>
+          <div class="mini-item"><span class="emoji">🎁</span><span><strong>공통 혜택</strong><br />프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</span></div>
         </div>
         <div class="gold-celebration">🎉 축하드립니다! Golden QR 발견 성공</div>
         <div class="confetti-wrap" aria-hidden="true">
@@ -764,7 +700,7 @@
           <span class="confetti-piece"></span>
         </div>
         <div class="gold-highlight">Golden QR을 발견하시면 Monoplex 영화 티켓 2매가 제공됩니다.</div>
-        <div class="gold-lock">QR 럭키드로우는 일반 QR 및 Golden QR 참여 고객 모두 도전할 수 있습니다.</div>
+        <div class="gold-lock">프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</div>
       </div>
     </section>
 
@@ -772,24 +708,13 @@
       <div class="card">
         <h2 class="section-title">🎲 QR 럭키드로우 경품</h2>
         <p class="section-subtitle">프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</p>
-        <div class="prize-list">
-          <div class="lucky-card">무료 중식 2인권</div>
-          <div class="lucky-card">무료 조식 2인권</div>
-          <div class="lucky-card">조식 50% 할인</div>
-          <div class="lucky-card">Le Cafe 음료 2잔</div>
-          <div class="lucky-card">Free Late Check-out 1 Hour</div>
-          <div class="lucky-card">무료 칫솔 세트</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section fade-in hidden" id="hintSection">
-      <div class="hint-box">
-        <h2 class="section-title">🔎 Golden QR Hint</h2>
-        <p>Golden QR은 호텔 어딘가에 숨겨져 있습니다. 객실, 로비, 또는 호텔 시설 공간을 잘 살펴보세요.</p>
-        <div class="detective" aria-hidden="true">
-          <div class="magnifier"></div>
-          <div class="treasure-mark"></div>
+        <div class="chip-grid">
+          <span class="chip">무료 중식 2인권</span>
+          <span class="chip">무료 조식 2인권</span>
+          <span class="chip">조식 50% 할인</span>
+          <span class="chip">Le Cafe 음료 2잔</span>
+          <span class="chip">Free Late Check-out 1 Hour</span>
+          <span class="chip">무료 칫솔 세트</span>
         </div>
       </div>
     </section>
@@ -853,8 +778,8 @@
       golden: {
         heroDesc: '축하드립니다. Golden QR을 찾으셨습니다.',
         title: '👑 Golden QR Special Mission',
-        description: 'Golden QR 고객은 Monoplex 영화 티켓 2매가 제공되며, 추가로 공통 QR 럭키드로우에도 도전할 수 있습니다.',
-        tip: 'Golden QR은 영화 티켓 2매 제공 + 공통 럭키드로우 참여가 가능한 특별 미션입니다.'
+        description: 'Golden QR 고객은 Monoplex 영화 티켓 2매가 제공되며, 추가로 프런트 직원과 가위바위보 승리 시 QR 럭키드로우에도 도전할 수 있습니다.',
+        tip: 'Golden QR은 영화 티켓 2매 제공 + 가위바위보 승리 시 럭키드로우 참여가 가능한 특별 미션입니다.'
       }
     };
 
@@ -871,12 +796,11 @@
     document.getElementById('missionKicker').textContent = isGolden ? 'SPECIAL MISSION ACTIVE' : 'MISSION ACTIVE';
     document.getElementById('missionSectionTitle').textContent = isGolden ? '👑 현재 특별 미션' : '🎯 현재 리뷰 미션';
     document.getElementById('missionSubtitle').textContent = isGolden
-      ? 'Golden QR 전용 안내입니다. Monoplex 영화 티켓 2매가 제공되며, 공통 럭키드로우에도 참여하실 수 있습니다.'
+      ? 'Golden QR 전용 안내입니다. Monoplex 영화 티켓 2매가 제공되며, 프런트 직원과 가위바위보 승리 시 럭키드로우에도 참여하실 수 있습니다.'
       : 'QR에 안내된 미션 주제에 맞게 리뷰를 작성해 주세요.';
 
     if (isGolden) {
       document.getElementById('goldSectionWrap').classList.remove('hidden');
-      document.getElementById('hintSection').classList.remove('hidden');
     }
 
     async function copyMissionText() {
