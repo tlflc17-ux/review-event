@@ -9,125 +9,134 @@
 
 <style>
 body {
-  margin:0;
-  font-family:'Noto Sans KR', sans-serif;
-  background:#f5f7fb;
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f5f7fb;
 }
 
 .container {
-  max-width:480px;
-  margin:0 auto;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
 /* 상단 */
 .hero {
   background: linear-gradient(135deg, #6FCF97, #27AE60);
-  color:#fff;
-  padding:30px 20px;
-  border-bottom-left-radius:30px;
-  border-bottom-right-radius:30px;
+  color: #fff;
+  padding: 30px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .hero h1 {
-  margin:0;
-  font-size:22px;
-  font-weight:900;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
 }
 
 .hero p {
-  margin-top:8px;
-  font-size:14px;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* 참여방법 */
 .section {
-  padding:20px;
+  padding: 20px;
 }
 
 .title {
-  font-size:20px;
-  font-weight:900;
-  margin-bottom:15px;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 15px;
 }
 
 .step {
-  display:flex;
-  gap:15px;
-  background:#fff;
-  padding:18px;
-  border-radius:20px;
-  margin-bottom:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .step-num {
-  width:50px;
-  height:50px;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
   background: linear-gradient(135deg, #ff3b3b, #ff1f1f);
-  color:#fff;
-  border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
+  color: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
 }
 
 .step-text strong {
-  display:block;
-  font-size:16px;
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
 }
 
 .step-text p {
-  margin:0;
-  font-size:14px;
-  color:#666;
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  white-space: pre-line;
 }
 
 /* 버튼 */
 .review-btn {
-  display:block;
-  width:90%;
-  margin:10px auto 20px;
-  padding:16px;
-  border-radius:20px;
-  text-align:center;
-  color:#fff;
-  font-weight:900;
+  display: block;
+  width: 90%;
+  margin: 10px auto 20px;
+  padding: 16px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
   background: linear-gradient(135deg, #6FCF97, #27AE60);
-  text-decoration:none;
-}
-
-/* 미션 */
-.mission {
-  background:#fff;
-  margin:20px;
-  padding:20px;
-  border-radius:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
-}
-
-.mission h2 {
-  margin:0 0 10px;
+  text-decoration: none;
 }
 
 /* 상품 */
 .product-box {
-  background:#fff;
-  margin:20px;
-  padding:20px;
-  border-radius:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  background: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .product-box h2 {
-  margin:0 0 10px;
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 900;
 }
 
+.product-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.product-note {
+  margin-top: 10px !important;
+  font-size: 12px !important;
+  color: #888 !important;
+}
+
+/* 푸터 */
 .footer {
-  text-align:center;
-  padding:30px;
-  font-size:12px;
-  color:#888;
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+  color: #888;
 }
 </style>
 </head>
@@ -135,103 +144,105 @@ body {
 <body>
 <div class="container">
 
-<!-- 상단 -->
-<div class="hero">
-  <h1>ibis Styles Ambassador Seoul Gangnam</h1>
-  <p id="heroDesc">QR 미션을 확인해 주세요.</p>
-</div>
+  <!-- 상단 -->
+  <div class="hero">
+    <h1>ibis Styles Ambassador Seoul Gangnam</h1>
+    <p id="heroDesc">QR 미션을 확인해 주세요.</p>
+  </div>
 
-<!-- 참여방법 -->
-<div class="section">
-  <div class="title">🗺 참여 방법</div>
+  <!-- 참여방법 -->
+  <div class="section">
+    <div class="title">🗺 참여 방법</div>
 
-  <div class="step">
-    <div class="step-num">1</div>
-    <div class="step-text">
-      <strong>호텔 내 숨겨진 QR 코드 찾기</strong>
-      <p>호텔 곳곳을 둘러보며 숨겨진 QR 코드를 찾아주세요.</p>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <strong>호텔 내 숨겨진 QR 코드 찾기</strong>
+        <p>호텔 곳곳을 둘러보며 숨겨진 QR 코드를 찾아주세요.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <strong>QR 스캔 후 Google 리뷰 작성</strong>
+        <p id="missionText">현재 페이지에 보이는 미션에 맞춰 리뷰를 작성해 주세요.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <strong>리뷰 화면을 프런트 직원에게 보여주기</strong>
+        <p>작성된 리뷰 화면을 직원에게 보여주세요.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <strong>상품 1개 선택 후 수령</strong>
+        <p>참여 완료 후 상품 1개를 선택해 수령하실 수 있습니다.</p>
+      </div>
     </div>
   </div>
 
-  <div class="step">
-    <div class="step-num">2</div>
-    <div class="step-text">
-      <strong>QR 스캔 후 Google 리뷰 작성</strong>
-      <p>
-        현재 페이지에 보이는 <b>미션 키워드</b>를 포함하여 리뷰를 작성해 주세요.
-      </p>
-    </div>
+  <!-- 리뷰 버튼 -->
+  <a
+    class="review-btn"
+    href="https://www.google.com/maps/place/?q=ibis+styles+ambassador+seoul+gangnam"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Google Review 작성하기
+  </a>
+
+  <!-- 상품 -->
+  <div class="product-box">
+    <h2>🎁 참여 상품 (택 1)</h2>
+    <p>
+      Oxford Lego / ibis 타월 / 여권 케이스 / 키링 / 마그넷 /
+      Welcome Drink 2잔 / Late Check-out / 무료 주차 / 객실 업그레이드 / 에코백
+    </p>
+    <p class="product-note">※ 상품은 재고 상황에 따라 변경될 수 있습니다.</p>
   </div>
 
-  <div class="step">
-    <div class="step-num">3</div>
-    <div class="step-text">
-      <strong>리뷰 화면을 프런트 직원에게 보여주기</strong>
-      <p>작성된 리뷰 화면을 직원에게 보여주세요.</p>
-    </div>
+  <div class="footer">
+    ibis Styles Ambassador Seoul Gangnam
   </div>
-
-  <div class="step">
-    <div class="step-num">4</div>
-    <div class="step-text">
-      <strong>상품 1개 선택 후 수령</strong>
-      <p>참여 완료 후 상품 1개를 선택해 수령하실 수 있습니다.</p>
-    </div>
-  </div>
-</div>
-
-<!-- 리뷰 버튼 (위치 이동됨) -->
-<a class="review-btn" href="https://www.google.com/maps/place/?q=ibis+styles+ambassador+seoul+gangnam" target="_blank">
-  Google Review 작성하기
-</a>
-
-<!-- 미션 -->
-<div class="mission">
-  <h2 id="missionTitle"></h2>
-  <p id="missionDesc"></p>
-</div>
-
-<!-- 상품 -->
-<div class="product-box">
-  <h2>🎁 참여 상품 (택 1)</h2>
-  <p>
-    Oxford Lego / ibis 타월 / 여권 케이스 / 키링 / 마그넷 /
-    Welcome Drink 2잔 / Late Check-out / 무료 주차 / 객실 업그레이드 / 에코백
-  </p>
-</div>
-
-<div class="footer">
-  ibis Styles Ambassador Seoul Gangnam
-</div>
 
 </div>
 
 <script>
 const missionMap = {
-  staff: {
-    title: "👨‍💼 이달의 우수 직원",
-    desc: "체크인을 도와준 직원 또는 인상 깊었던 직원의 서비스 경험을 남겨주세요.",
-    hero: "직원 서비스 관련 QR을 찾으셨습니다."
-  },
-  breakfast: {
-    title: "🍳 조식 리뷰",
-    desc: "조식의 맛과 구성을 자유롭게 작성해주세요.",
-    hero: "조식 관련 QR을 찾으셨습니다."
-  },
-  location: {
-    title: "📍 호텔 위치",
-    desc: "호텔 위치 및 접근성에 대해 작성해주세요.",
-    hero: "위치 관련 QR을 찾으셨습니다."
-  }
+  staff: "체크인을 도와준 직원 또는 인상 깊었던 직원의 서비스 경험을 남겨주세요.",
+  breakfast: "호텔 조식의 맛, 메뉴 구성, 가성비에 대해 자유롭게 평가해 주세요.",
+  location: "호텔의 위치, 코엑스 / 삼성역 접근성, 주변 편의시설에 대해 남겨주세요.",
+  facility: "호텔 내 세탁실, 피트니스, 편의점, Monoplex 영화관 등 부대시설 이용 경험을 공유해주세요.",
+  room: "객실 청소 및 하우스키핑에 대한 만족도를 공유해주세요.",
+  bedding: "침구 만족도에 대해서 의견을 남겨주세요.",
+  golden: "Golden QR입니다. 프런트에서 특별 혜택을 안내받아 주세요."
+};
+
+const heroMap = {
+  staff: "직원 서비스 관련 QR을 찾으셨습니다.",
+  breakfast: "조식 관련 QR을 찾으셨습니다.",
+  location: "위치 관련 QR을 찾으셨습니다.",
+  facility: "부대시설 관련 QR을 찾으셨습니다.",
+  room: "객실 관련 QR을 찾으셨습니다.",
+  bedding: "침구 관련 QR을 찾으셨습니다.",
+  golden: "축하드립니다. Golden QR을 찾으셨습니다."
 };
 
 const params = new URLSearchParams(window.location.search);
 const mission = params.get("mission") || "staff";
-const data = missionMap[mission] || missionMap.staff;
 
-document.getElementById("missionTitle").innerText = data.title;
-document.getElementById("missionDesc").innerText = data.desc;
-document.getElementById("heroDesc").innerText = data.hero;
+document.getElementById("missionText").innerText =
+  "현재 페이지에 보이는 미션에 맞춰 리뷰를 작성해 주세요.\n👉 " +
+  (missionMap[mission] || missionMap.staff);
+
+document.getElementById("heroDesc").innerText =
+  heroMap[mission] || heroMap.staff;
 </script>
 
 </body>
