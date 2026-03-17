@@ -34,15 +34,8 @@
       --container: 480px;
     }
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -60,9 +53,7 @@
       overflow-x: hidden;
     }
 
-    .section {
-      padding: 18px 18px 6px;
-    }
+    .section { padding: 18px 18px 6px; }
 
     .fade-in {
       opacity: 0;
@@ -95,19 +86,8 @@
       background: rgba(255,255,255,0.08);
     }
 
-    .hero::before {
-      width: 220px;
-      height: 220px;
-      top: -90px;
-      right: -100px;
-    }
-
-    .hero::after {
-      width: 150px;
-      height: 150px;
-      bottom: -45px;
-      left: -45px;
-    }
+    .hero::before { width: 220px; height: 220px; top: -90px; right: -100px; }
+    .hero::after { width: 150px; height: 150px; bottom: -45px; left: -45px; }
 
     .brand-row {
       position: relative;
@@ -162,11 +142,7 @@
       opacity: .96;
     }
 
-    .hero p {
-      margin: 0;
-      font-size: 0.97rem;
-      opacity: .96;
-    }
+    .hero p { margin: 0; font-size: 0.97rem; opacity: .96; }
 
     .treasure-icons {
       display: flex;
@@ -305,8 +281,7 @@
       border: 1px solid rgba(226,0,26,0.12);
     }
 
-    .intro-list,
-    .prize-list {
+    .intro-list, .prize-list {
       display: grid;
       gap: 10px;
       margin-top: 14px;
@@ -323,9 +298,7 @@
       font-size: 0.92rem;
     }
 
-    .emoji {
-      flex: 0 0 auto;
-    }
+    .emoji { flex: 0 0 auto; }
 
     .cta-box {
       position: relative;
@@ -357,8 +330,7 @@
       font-weight: 700;
     }
 
-    .review-btn,
-    .secondary-btn {
+    .review-btn, .secondary-btn {
       display: inline-flex;
       width: 100%;
       justify-content: center;
@@ -391,10 +363,7 @@
       border: 1px solid rgba(255,255,255,0.16);
     }
 
-    .review-btn:hover,
-    .review-btn:active,
-    .secondary-btn:hover,
-    .secondary-btn:active {
+    .review-btn:hover, .review-btn:active, .secondary-btn:hover, .secondary-btn:active {
       transform: translateY(-2px) scale(1.01);
       filter: saturate(1.05);
     }
@@ -406,11 +375,7 @@
       font-size: .8rem;
     }
 
-    .steps,
-    .missions {
-      display: grid;
-      gap: 12px;
-    }
+    .steps, .missions { display: grid; gap: 12px; }
 
     .step-card {
       display: grid;
@@ -435,18 +400,8 @@
       box-shadow: 0 10px 20px rgba(226,0,26,0.2);
     }
 
-    .step-card strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 2px;
-      font-size: .98rem;
-    }
-
-    .step-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .9rem;
-    }
+    .step-card strong { display: block; color: var(--navy); margin-bottom: 2px; font-size: .98rem; }
+    .step-card p { margin: 0; color: var(--muted); font-size: .9rem; }
 
     .mission-card {
       position: relative;
@@ -536,11 +491,7 @@
       color: var(--navy);
     }
 
-    .note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: .82rem;
-    }
+    .note { margin-top: 12px; color: var(--muted); font-size: .82rem; }
 
     .gold-section {
       animation: goldGlow 2.4s ease-in-out infinite;
@@ -553,60 +504,23 @@
       box-shadow: 0 18px 34px rgba(255,174,0,0.24);
     }
 
-    .gold-section::before,
-    .gold-section::after {
+    .gold-section::before, .gold-section::after {
       content: "";
       position: absolute;
       border-radius: 50%;
       background: rgba(255,255,255,0.22);
     }
 
-    .gold-section::before {
-      width: 150px;
-      height: 150px;
-      top: -40px;
-      right: -40px;
-    }
-
-    .gold-section::after {
-      width: 100px;
-      height: 100px;
-      bottom: -30px;
-      left: -20px;
-    }
+    .gold-section::before { width: 150px; height: 150px; top: -40px; right: -40px; }
+    .gold-section::after { width: 100px; height: 100px; bottom: -30px; left: -20px; }
 
     .gold-section .section-title,
     .gold-section .section-subtitle,
     .gold-section .mini-item,
     .gold-highlight,
-    .gold-lock,
-    .confetti-wrap,
-    .gold-celebration {
+    .confetti-wrap {
       position: relative;
       z-index: 1;
-    }
-
-    .gold-section .section-title {
-      color: #4b2c00;
-    }
-
-    .gold-section .mini-item {
-      background: rgba(255,255,255,0.36);
-      border: 1px solid rgba(120,74,0,0.12);
-      color: #4a3005;
-    }
-
-    .gold-highlight {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(76,46,0,0.12);
-      border: 1px solid rgba(76,46,0,0.08);
-      font-weight: 900;
-      line-height: 1.5;
-    }
-
-    .confetti-wrap {
       display: flex;
       justify-content: center;
       gap: 8px;
@@ -630,6 +544,8 @@
     .confetti-piece:nth-child(6) { background: #ffef9c; animation-delay: 0.75s; }
 
     .gold-celebration {
+      position: relative;
+      z-index: 1;
       margin-top: 14px;
       padding: 16px 14px;
       border-radius: 18px;
@@ -640,6 +556,24 @@
       font-weight: 900;
       color: #6a4200;
       letter-spacing: -0.01em;
+    }
+
+    .gold-lock {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gold-section .section-title { color: #4b2c00; }
+    .gold-section .mini-item { background: rgba(255,255,255,0.36); border: 1px solid rgba(120,74,0,0.12); color: #4a3005; }
+
+    .gold-highlight {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(76,46,0,0.12);
+      border: 1px solid rgba(76,46,0,0.08);
+      font-weight: 900;
+      line-height: 1.5;
     }
 
     .gold-lock {
@@ -683,12 +617,7 @@
       pointer-events: none;
     }
 
-    .hint-box .section-title,
-    .hint-box p,
-    .detective {
-      position: relative;
-      z-index: 1;
-    }
+    .hint-box .section-title, .hint-box p, .detective { position: relative; z-index: 1; }
 
     .detective {
       display: flex;
@@ -697,8 +626,7 @@
       margin-top: 16px;
     }
 
-    .magnifier,
-    .treasure-mark {
+    .magnifier, .treasure-mark {
       width: 70px;
       height: 70px;
       position: relative;
@@ -777,10 +705,7 @@
       border: 1px solid rgba(16,26,46,0.08);
     }
 
-    .verify-btn:active,
-    .verify-btn:hover {
-      transform: translateY(-1px);
-    }
+    .verify-btn:active, .verify-btn:hover { transform: translateY(-1px); }
 
     .verify-status {
       margin-top: 12px;
@@ -791,21 +716,9 @@
       display: none;
     }
 
-    .verify-status.show {
-      display: block;
-    }
-
-    .verify-status.ok {
-      background: rgba(15,157,88,0.10);
-      color: #0d6b3d;
-      border: 1px solid rgba(15,157,88,0.14);
-    }
-
-    .verify-status.warn {
-      background: rgba(255,166,0,0.12);
-      color: #8b5a00;
-      border: 1px solid rgba(255,166,0,0.16);
-    }
+    .verify-status.show { display: block; }
+    .verify-status.ok { background: rgba(15,157,88,0.10); color: #0d6b3d; border: 1px solid rgba(15,157,88,0.14); }
+    .verify-status.warn { background: rgba(255,166,0,0.12); color: #8b5a00; border: 1px solid rgba(255,166,0,0.16); }
 
     .footer {
       padding: 30px 18px 42px;
@@ -821,9 +734,7 @@
       font-size: .95rem;
     }
 
-    .hidden {
-      display: none !important;
-    }
+    .hidden { display: none !important; }
 
     @keyframes float {
       0%,100% { transform: translateY(0); }
@@ -841,6 +752,8 @@
       50% { transform: translateY(6px) rotate(18deg); }
       100% { transform: translateY(-8px) rotate(-18deg); opacity: 0.95; }
     }
+      50% { transform: translateY(-6px); }
+    }
 
     @media (min-width: 481px) {
       body { padding: 18px 0; }
@@ -849,9 +762,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .fade-in,
-      .fade-in.visible,
-      .icon-bubble {
+      .fade-in, .fade-in.visible, .icon-bubble {
         transition: none !important;
         animation: none !important;
         transform: none !important;
@@ -863,23 +774,12 @@
 <body>
   <main class="app">
     <header class="hero fade-in visible">
-      <div class="brand-row">
-        <div class="logo-text">ibis Styles Ambassador Seoul Gangnam</div>
-        <div class="event-pill" id="heroPill">Treasure Hunt Event</div>
-      </div>
-
       <div class="hero-card">
         <h1>⭐ ibis Styles Ambassador Seoul Gangnam</h1>
         <h2>Google Review Treasure Hunt Event</h2>
         <p id="heroDesc">호텔 곳곳에 숨겨진 QR 코드를 찾아보세요.</p>
 
-        <div class="treasure-icons" aria-hidden="true">
-          <div class="icon-bubble qr"></div>
-          <div class="icon-bubble map"></div>
-          <div class="icon-bubble star"></div>
-          <div class="icon-bubble gift"></div>
         </div>
-      </div>
     </header>
 
     <section class="section fade-in">
@@ -976,7 +876,7 @@
         <div class="mini-item"><span class="emoji">✨</span><span>Golden QR은 호텔 내 단 한 곳에만 숨겨져 있습니다.</span></div>
         <div class="intro-list" style="margin-top:12px;">
           <div class="mini-item"><span class="emoji">🎬</span><span><strong>특별 혜택</strong><br />Monoplex 영화 티켓 2매 제공</span></div>
-          <div class="mini-item"><span class="emoji">🎁</span><span><strong>공통 혜택</strong><br />프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</span></div>
+          <div class="mini-item"><span class="emoji">🎁</span><span><strong>공통 혜택</strong><br />Golden QR 참여 고객도 QR 럭키드로우에 도전할 수 있습니다.</span></div>
         </div>
         <div class="gold-celebration">🎉 축하드립니다! Golden QR 발견 성공</div>
         <div class="confetti-wrap" aria-hidden="true">
@@ -988,7 +888,7 @@
           <span class="confetti-piece"></span>
         </div>
         <div class="gold-highlight">Golden QR을 발견하시면 Monoplex 영화 티켓 2매가 제공됩니다.</div>
-        <div class="gold-lock">프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</div>
+        <div class="gold-lock">QR 럭키드로우는 일반 QR 및 Golden QR 참여 고객 모두 도전할 수 있습니다.</div>
       </div>
     </section>
 
@@ -1084,8 +984,8 @@
         pill: 'Golden QR',
         heroDesc: '축하드립니다. Golden QR을 찾으셨습니다.',
         title: '👑 Golden QR Special Mission',
-        description: 'Golden QR 고객은 Monoplex 영화 티켓 2매가 제공되며, 추가로 프런트 직원과 가위바위보 승리 시 QR 럭키드로우에도 도전할 수 있습니다.',
-        tip: 'Golden QR은 영화 티켓 2매 제공 + 가위바위보 승리 시 럭키드로우 참여가 가능한 특별 미션입니다.'
+        description: 'Golden QR 고객은 Monoplex 영화 티켓 2매가 제공되며, 추가로 공통 QR 럭키드로우에도 도전할 수 있습니다.',
+        tip: 'Golden QR은 영화 티켓 2매 제공 + 공통 럭키드로우 참여가 가능한 특별 미션입니다.'
       }
     };
 
@@ -1103,7 +1003,7 @@
     document.getElementById('missionKicker').textContent = isGolden ? 'SPECIAL MISSION ACTIVE' : 'MISSION ACTIVE';
     document.getElementById('missionSectionTitle').textContent = isGolden ? '👑 현재 특별 미션' : '🎯 현재 리뷰 미션';
     document.getElementById('missionSubtitle').textContent = isGolden
-      ? 'Golden QR 전용 안내입니다. Monoplex 영화 티켓 2매가 제공되며, 프런트 직원과 가위바위보 승리 시 럭키드로우에도 참여하실 수 있습니다.'
+      ? 'Golden QR 전용 안내입니다. Monoplex 영화 티켓 2매가 제공되며, 공통 럭키드로우에도 참여하실 수 있습니다.'
       : 'QR에 안내된 미션 주제에 맞게 리뷰를 작성해 주세요.';
 
     if (isGolden) {
@@ -1159,6 +1059,16 @@
       }
       observer.observe(el);
     });
-  </script>
+  // 하루 1회 참여 제한
+const today = new Date().toISOString().slice(0,10);
+const lastPlayDate = localStorage.getItem("qr_event_date");
+
+if(lastPlayDate === today){
+  alert("오늘은 이미 이벤트에 참여하셨습니다. 내일 다시 도전해주세요!");
+} else {
+  localStorage.setItem("qr_event_date", today);
+}
+
+</script>
 </body>
 </html>
