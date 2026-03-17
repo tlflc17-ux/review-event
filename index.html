@@ -1,856 +1,204 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>ibis Styles Ambassador Seoul Gangnam | Google Review Treasure Hunt Event</title>
-  <meta name="description" content="ibis Styles Ambassador Seoul Gangnam Google Review Treasure Hunt Event" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --ibis-red: #E2001A;
-      --ibis-red-dark: #b30015;
-      --navy: #101a2e;
-      --navy-soft: #18263d;
-      --white: #ffffff;
-      --bg: #f5f7fb;
-      --text: #142033;
-      --muted: #6b7280;
-      --line: rgba(16, 26, 46, 0.08);
-      --shadow: 0 16px 40px rgba(16, 26, 46, 0.12);
-      --shadow-soft: 0 10px 24px rgba(16, 26, 46, 0.08);
-      --gold: #FFD700;
-      --gold-deep: #FFA500;
-      --google-blue: #4285F4;
-      --google-red: #DB4437;
-      --google-yellow: #F4B400;
-      --google-green: #0F9D58;
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 18px;
-      --radius-sm: 14px;
-      --container: 480px;
-    }
-
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Noto Sans KR', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background:
-        radial-gradient(circle at top right, rgba(39, 174, 96, 0.10), transparent 22%),
-        linear-gradient(180deg, #fbfcff 0%, #f4f7fb 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .app {
-      max-width: var(--container);
-      margin: 0 auto;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    .section {
-      padding: 18px 18px 6px;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .75s ease, transform .75s ease;
-      will-change: opacity, transform;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 24px 18px 30px;
-      background: linear-gradient(145deg, #6FCF97 0%, #27AE60 50%, #1E8449 100%);
-      color: var(--white);
-      border-bottom-left-radius: 34px;
-      border-bottom-right-radius: 34px;
-      box-shadow: 0 20px 40px rgba(39, 174, 96, 0.24);
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero::before {
-      width: 220px;
-      height: 220px;
-      top: -90px;
-      right: -100px;
-    }
-
-    .hero::after {
-      width: 150px;
-      height: 150px;
-      bottom: -45px;
-      left: -45px;
-    }
-
-    .hero-card {
-      position: relative;
-      z-index: 2;
-      border-radius: var(--radius-xl);
-      padding: 22px 18px 20px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
-      backdrop-filter: blur(12px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
-    }
-
-    .hero h1 {
-      margin: 0 0 10px;
-      font-size: 1.6rem;
-      line-height: 1.28;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h2 {
-      margin: 0 0 12px;
-      font-size: 1.03rem;
-      font-weight: 700;
-      opacity: .96;
-    }
-
-    .hero p {
-      margin: 0;
-      font-size: 0.97rem;
-      opacity: .96;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.86);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(255,255,255,0.92);
-      box-shadow: var(--shadow-soft);
-      padding: 18px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 8px;
-      font-size: 1.18rem;
-      font-weight: 900;
-      color: var(--navy);
-      letter-spacing: -0.02em;
-    }
-
-    .section-subtitle {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-size: 0.83rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #ffe8eb 0%, #fff7f8 100%);
-      color: var(--ibis-red-dark);
-      border: 1px solid rgba(226,0,26,0.12);
-    }
-
-    .intro-list,
-    .prize-list {
-      display: grid;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .mini-item {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      padding: 12px 13px;
-      background: rgba(16,26,46,0.04);
-      border: 1px solid rgba(16,26,46,0.06);
-      border-radius: 14px;
-      font-size: 0.92rem;
-    }
-
-    .emoji {
-      flex: 0 0 auto;
-    }
-
-    .cta-box {
-      position: relative;
-      overflow: hidden;
-      padding: 22px 18px;
-      border-radius: var(--radius-xl);
-      background: linear-gradient(160deg, #121d31 0%, #1c2a44 100%);
-      color: #fff;
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .cta-box::before {
-      content: "";
-      position: absolute;
-      top: -28px;
-      right: -28px;
-      width: 118px;
-      height: 118px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
-    }
-
-    .cta-box p {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 14px;
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .review-btn,
-    .secondary-btn {
-      display: inline-flex;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      min-height: 58px;
-      border: 0;
-      border-radius: 18px;
-      padding: 14px 18px;
-      font-size: 1rem;
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
-    }
-
-    .review-btn {
-      position: relative;
-      z-index: 1;
-      color: #fff;
-      background: linear-gradient(90deg, var(--google-blue) 0 25%, var(--google-red) 25% 50%, var(--google-yellow) 50% 75%, var(--google-green) 75% 100%);
-      box-shadow: 0 12px 26px rgba(16,26,46,0.26);
-    }
-
-    .secondary-btn {
-      margin-top: 10px;
-      background: rgba(255,255,255,0.10);
-      color: #fff;
-      border: 1px solid rgba(255,255,255,0.16);
-    }
-
-    .review-btn:hover,
-    .review-btn:active,
-    .secondary-btn:hover,
-    .secondary-btn:active {
-      transform: translateY(-2px) scale(1.01);
-      filter: saturate(1.05);
-    }
-
-    .review-btn span {
-      background: rgba(0,0,0,0.16);
-      padding: 5px 10px;
-      border-radius: 999px;
-      font-size: .8rem;
-    }
-
-    .steps,
-    .missions {
-      display: grid;
-      gap: 12px;
-    }
-
-    .step-card {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 14px;
-      padding: 16px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .step-no {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(145deg, var(--ibis-red) 0%, #ff4b5e 100%);
-      color: #fff;
-      font-weight: 900;
-      box-shadow: 0 10px 20px rgba(226,0,26,0.2);
-    }
-
-    .step-card strong {
-      display: block;
-      color: var(--navy);
-      margin-bottom: 2px;
-      font-size: .98rem;
-    }
-
-    .step-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .mission-card {
-      position: relative;
-      overflow: hidden;
-      padding: 18px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.98));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .mission-card::after {
-      content: "";
-      position: absolute;
-      right: -18px;
-      top: -18px;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(226,0,26,0.06);
-    }
-
-    .mission-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: var(--ibis-red-dark);
-      background: rgba(226,0,26,0.08);
-      border: 1px solid rgba(226,0,26,0.10);
-      position: relative;
-      z-index: 1;
-    }
-
-    .mission-card h3 {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 8px;
-      font-size: 1.14rem;
-      color: var(--navy);
-      font-weight: 900;
-    }
-
-    .mission-card p {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .mission-tip {
-      position: relative;
-      z-index: 1;
-      margin-top: 14px;
-      padding: 12px 13px;
-      border-radius: 14px;
-      background: rgba(16,26,46,0.04);
-      border: 1px solid rgba(16,26,46,0.06);
-      font-size: 0.88rem;
-      color: var(--navy-soft);
-      font-weight: 700;
-    }
-
-    .chip-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #fff, #f4f7fb);
-      border: 1px solid rgba(16,26,46,0.09);
-      box-shadow: 0 8px 16px rgba(16,26,46,0.06);
-      font-size: .86rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
-
-    .note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: .82rem;
-    }
-
-    .gold-section {
-      animation: goldGlow 2.4s ease-in-out infinite;
-      position: relative;
-      overflow: hidden;
-      padding: 20px 18px;
-      border-radius: 30px;
-      background: linear-gradient(145deg, #fff8c9 0%, var(--gold) 32%, #ffce48 64%, var(--gold-deep) 100%);
-      color: #472b00;
-      box-shadow: 0 18px 34px rgba(255,174,0,0.24);
-    }
-
-    .gold-section::before,
-    .gold-section::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.22);
-    }
-
-    .gold-section::before {
-      width: 150px;
-      height: 150px;
-      top: -40px;
-      right: -40px;
-    }
-
-    .gold-section::after {
-      width: 100px;
-      height: 100px;
-      bottom: -30px;
-      left: -20px;
-    }
-
-    .gold-section .section-title,
-    .gold-section .section-subtitle,
-    .gold-section .mini-item,
-    .gold-highlight,
-    .gold-lock,
-    .confetti-wrap,
-    .gold-celebration {
-      position: relative;
-      z-index: 1;
-    }
-
-    .gold-section .section-title {
-      color: #4b2c00;
-    }
-
-    .gold-section .mini-item {
-      background: rgba(255,255,255,0.36);
-      border: 1px solid rgba(120,74,0,0.12);
-      color: #4a3005;
-    }
-
-    .gold-highlight {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(76,46,0,0.12);
-      border: 1px solid rgba(76,46,0,0.08);
-      font-weight: 900;
-      line-height: 1.5;
-    }
-
-    .confetti-wrap {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      margin: 16px 0 4px;
-      min-height: 36px;
-    }
-
-    .confetti-piece {
-      width: 10px;
-      height: 18px;
-      border-radius: 999px;
-      animation: confettiDrop 1.8s ease-in-out infinite;
-      opacity: 0.9;
-    }
-
-    .confetti-piece:nth-child(1) { background: #fff; animation-delay: 0s; }
-    .confetti-piece:nth-child(2) { background: #ffec8a; animation-delay: 0.15s; }
-    .confetti-piece:nth-child(3) { background: #fff7c7; animation-delay: 0.3s; }
-    .confetti-piece:nth-child(4) { background: #ffd54f; animation-delay: 0.45s; }
-    .confetti-piece:nth-child(5) { background: #fff; animation-delay: 0.6s; }
-    .confetti-piece:nth-child(6) { background: #ffef9c; animation-delay: 0.75s; }
-
-    .gold-celebration {
-      margin-top: 14px;
-      padding: 16px 14px;
-      border-radius: 18px;
-      text-align: center;
-      background: rgba(255,255,255,0.34);
-      border: 1px solid rgba(120,74,0,0.14);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.25);
-      font-weight: 900;
-      color: #6a4200;
-      letter-spacing: -0.01em;
-    }
-
-    .gold-lock {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.42);
-      border: 1px dashed rgba(76,46,0,0.22);
-      font-weight: 800;
-      font-size: .9rem;
-    }
-
-    .footer {
-      padding: 30px 18px 42px;
-      text-align: center;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-
-    .footer strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--navy);
-      font-size: .95rem;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    @keyframes goldGlow {
-      0%, 100% { box-shadow: 0 18px 34px rgba(255,174,0,0.24); }
-      50% { box-shadow: 0 22px 40px rgba(255,174,0,0.34); }
-    }
-
-    @keyframes confettiDrop {
-      0% { transform: translateY(-8px) rotate(0deg); opacity: 0; }
-      20% { opacity: 1; }
-      50% { transform: translateY(6px) rotate(18deg); }
-      100% { transform: translateY(-8px) rotate(-18deg); opacity: 0.95; }
-    }
-
-    @media (min-width: 481px) {
-      body { padding: 18px 0; }
-      .app { border-radius: 28px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .fade-in,
-      .fade-in.visible {
-        transition: none !important;
-        transform: none !important;
-        opacity: 1 !important;
-      }
-      .gold-section,
-      .confetti-piece {
-        animation: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ibis Styles Ambassador Seoul Gangnam</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin:0;
+  font-family:'Noto Sans KR', sans-serif;
+  background:#f5f7fb;
+}
+
+.container {
+  max-width:480px;
+  margin:0 auto;
+}
+
+/* 상단 */
+.hero {
+  background: linear-gradient(135deg, #6FCF97, #27AE60);
+  color:#fff;
+  padding:30px 20px;
+  border-bottom-left-radius:30px;
+  border-bottom-right-radius:30px;
+}
+
+.hero h1 {
+  margin:0;
+  font-size:22px;
+  font-weight:900;
+}
+
+.hero p {
+  margin-top:8px;
+  font-size:14px;
+}
+
+/* 버튼 */
+.review-btn {
+  display:block;
+  width:90%;
+  margin:20px auto;
+  padding:16px;
+  border-radius:20px;
+  text-align:center;
+  color:#fff;
+  font-weight:900;
+  background: linear-gradient(135deg, #6FCF97, #27AE60);
+  text-decoration:none;
+}
+
+/* 참여방법 */
+.section {
+  padding:20px;
+}
+
+.title {
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:15px;
+}
+
+.step {
+  display:flex;
+  gap:15px;
+  background:#fff;
+  padding:18px;
+  border-radius:20px;
+  margin-bottom:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.step-num {
+  width:50px;
+  height:50px;
+  background: linear-gradient(135deg, #ff3b3b, #ff1f1f);
+  color:#fff;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+}
+
+.step-text strong {
+  display:block;
+  font-size:16px;
+}
+
+.step-text p {
+  margin:0;
+  font-size:14px;
+  color:#666;
+}
+
+/* 미션 */
+.mission {
+  background:#fff;
+  margin:20px;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+}
+
+.mission h2 {
+  margin:0 0 10px;
+}
+
+.footer {
+  text-align:center;
+  padding:30px;
+  font-size:12px;
+  color:#888;
+}
+</style>
 </head>
+
 <body>
-  <main class="app">
-    <header class="hero fade-in visible">
-      <div class="hero-card">
-        <h1> ibis Styles Ambassador Seoul Gangnam</h1>
-        <h2>Google Review Treasure Hunt Event</h2>
-        <p id="heroDesc">호텔 곳곳에 숨겨진 QR 코드를 찾아보세요.</p>
-      </div>
-    </header>
+<div class="container">
 
-    <section class="section fade-in">
-      <div class="card">
-        <h2 class="section-title">이벤트 소개</h2>
-        <p class="section-subtitle">QR을 스캔하고 미션에 맞는 Google 리뷰를 작성한 후 프런트 직원에게 리뷰 화면을 보여주시면 상품을 드립니다.</p>
-        <div class="badge-row">
-          <div class="badge">🎁 리뷰 작성 시 상품 100% 당첨</div>
-        </div>
-        <div class="intro-list">
-          <div class="mini-item"><span class="emoji">📌</span><span>여러 개의 QR 코드를 찾을수록 더 많은 미션에 참여할 수 있습니다.</span></div>
-          <div class="mini-item"><span class="emoji">📸</span><span>사진이 포함된 리뷰도 환영합니다.</span></div>
-          <div class="mini-item"><span class="emoji">🔎</span><span>호텔에는 총 여러 개의 QR 코드가 숨겨져 있습니다. 얼마나 많이 찾을 수 있을까요?</span></div>
-        </div>
-      </div>
-    </section>
+<!-- 상단 -->
+<div class="hero">
+  <h1>ibis Styles Ambassador Seoul Gangnam</h1>
+  <p id="heroDesc">QR 미션을 확인해 주세요.</p>
+</div>
 
-    <section class="section fade-in">
-      <div class="cta-box">
-        <p>⬇️ 아래 버튼을 눌러 리뷰를 작성해 주세요.</p>
-        <a
-          class="review-btn"
-          id="reviewLink"
-          href="https://www.google.com/travel/search?q=%EC%9D%B4%EB%B9%84%EC%8A%A4%20%EC%8A%A4%ED%83%80%EC%9D%BC%20%EC%95%B0%EB%B0%B0%EC%84%9C%EB%8D%94%20%EC%84%9C%EC%9A%B8%20%EA%B0%95%EB%82%A8&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764&hl=ko-SG&gl=sg&authuser=1&ssta=1&ts=CAEaRwopEicyJTB4MzU3Y2EzZmI1MDZiM2RkMzoweGE3ZGM2ODljZjRjMDI1NjISGhIUCgcI6g8QAxgWEgcI6g8QAxgXGAEyAhAA&qs=CAEyFENnc0k0c3FBcHMtVG11Nm5BUkFCOAJCCQliJcD0nGjcp0IJCWIlwPScaNyn&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwjI25Tsz6STAxUAAAAAHQAAAAAQBQ"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Google Review 작성하기"
-        >
-          Google Review 작성하기 <span>Tap</span>
-        </a>
-        <button class="secondary-btn" id="copyMissionBtn" type="button">현재 미션 문구 복사하기</button>
-      </div>
-    </section>
+<!-- 리뷰 버튼 -->
+<a class="review-btn" id="reviewLink" href="#" target="_blank">
+  Google Review 작성하기
+</a>
 
-    <section class="section fade-in">
-      <h2 class="section-title">🗺 참여 방법</h2>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-no">1</div>
-          <div><strong>호텔 내 숨겨진 QR 코드 찾기</strong><p>호텔 곳곳을 둘러보며 숨겨진 QR 코드를 찾아주세요.</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-no">2</div>
-          <div><strong>QR 스캔 후 Google 리뷰 작성</strong><p>현재 페이지에 보이는 미션 주제에 맞춰 리뷰를 작성해 주세요.</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-no">3</div>
-          <div><strong>리뷰 화면을 프런트 직원에게 보여주기</strong><p>작성된 리뷰 화면과 현재 미션 페이지를 함께 보여주시면 됩니다.</p></div>
-        </div>
-        <div class="step-card">
-          <div class="step-no">4</div>
-          <div><strong>상품 1개 선택 후 수령</strong><p>참여 완료 후 준비된 상품 중 1개를 선택해 수령하실 수 있습니다.</p></div>
-        </div>
-      </div>
-    </section>
+<!-- 참여방법 -->
+<div class="section">
+  <div class="title">🗺 참여 방법</div>
 
-    <section class="section fade-in" id="missionSection">
-      <h2 class="section-title" id="missionSectionTitle">🎯 현재 리뷰 미션</h2>
-      <p class="section-subtitle" id="missionSubtitle">QR에 안내된 미션 주제에 맞게 리뷰를 작성해 주세요.</p>
-      <div class="missions">
-        <article class="mission-card" id="activeMissionCard">
-          <div class="mission-kicker" id="missionKicker">MISSION ACTIVE</div>
-          <h3 id="missionTitle">👨‍💼 이달의 우수 직원</h3>
-          <p id="missionDescription">체크인을 도와준 직원 또는 인상 깊었던 직원의 서비스 경험을 남겨주세요.</p>
-          <div class="mission-tip" id="missionTip">Tip. 구체적인 경험이 담긴 리뷰일수록 더 좋습니다.</div>
-        </article>
-      </div>
-    </section>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">
+      <strong>호텔 내 숨겨진 QR 코드 찾기</strong>
+      <p>호텔 곳곳을 둘러보며 숨겨진 QR 코드를 찾아주세요.</p>
+    </div>
+  </div>
 
-    <section class="section fade-in" id="rewardSection">
-      <div class="card">
-        <h2 class="section-title">🎁 참여 상품 (택 1)</h2>
-        <div class="chip-grid">
-          <span class="chip">Oxford Lego</span>
-          <span class="chip">ibis 타월</span>
-          <span class="chip">누각 여권 케이스</span>
-          <span class="chip">Zero per Zero 키링</span>
-          <span class="chip">Zero per Zero 마그넷</span>
-          <span class="chip">ibis 마그넷</span>
-          <span class="chip">Welcome Drink 2잔</span>
-          <span class="chip">Free Late Check-out</span>
-          <span class="chip">무료 주차</span>
-          <span class="chip">다음 투숙 시 무료 객실 업그레이드</span>
-          <span class="chip">ibis 에코백</span>
-        </div>
-        <p class="note">※ 상품은 재고 상황에 따라 변경될 수 있습니다.</p>
-      </div>
-    </section>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">
+      <strong>QR 스캔 후 Google 리뷰 작성</strong>
+      <p>현재 페이지에 보이는 미션 주제에 맞춰 리뷰를 작성해 주세요.</p>
+    </div>
+  </div>
 
-    <section class="section fade-in hidden" id="goldSectionWrap">
-      <div class="gold-section">
-        <h2 class="section-title">👑 Golden QR Special Event</h2>
-        <p class="section-subtitle">호텔에 숨겨진 Golden QR을 발견하면 특별 이벤트에 참여할 수 있습니다.</p>
-        <div class="mini-item"><span class="emoji">✨</span><span>Golden QR은 호텔 내 단 한 곳에만 숨겨져 있습니다.</span></div>
-        <div class="intro-list" style="margin-top:12px;">
-          <div class="mini-item"><span class="emoji">🎬</span><span><strong>특별 혜택</strong><br />Monoplex 영화 티켓 2매 제공</span></div>
-          <div class="mini-item"><span class="emoji">🎁</span><span><strong>공통 혜택</strong><br />프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</span></div>
-        </div>
-        <div class="gold-celebration">🎉 축하드립니다! Golden QR 발견 성공</div>
-        <div class="confetti-wrap" aria-hidden="true">
-          <span class="confetti-piece"></span>
-          <span class="confetti-piece"></span>
-          <span class="confetti-piece"></span>
-          <span class="confetti-piece"></span>
-          <span class="confetti-piece"></span>
-          <span class="confetti-piece"></span>
-        </div>
-        <div class="gold-highlight">Golden QR을 발견하시면 Monoplex 영화 티켓 2매가 제공됩니다.</div>
-        <div class="gold-lock">프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</div>
-      </div>
-    </section>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">
+      <strong>리뷰 화면을 프런트 직원에게 보여주기</strong>
+      <p>작성된 리뷰 화면과 현재 미션 페이지를 함께 보여주시면 됩니다.</p>
+    </div>
+  </div>
 
-    <section class="section fade-in" id="luckySection">
-      <div class="card">
-        <h2 class="section-title">🎲 QR 럭키드로우 경품</h2>
-        <p class="section-subtitle">프런트 직원과 가위바위보에서 승리 시 럭키드로우에 참여하실 수 있습니다.</p>
-        <div class="chip-grid">
-          <span class="chip">무료 중식 2인권</span>
-          <span class="chip">무료 조식 2인권</span>
-          <span class="chip">조식 50% 할인</span>
-          <span class="chip">Le Cafe 음료 2잔</span>
-          <span class="chip">Free Late Check-out 1 Hour</span>
-          <span class="chip">무료 칫솔 세트</span>
-        </div>
-      </div>
-    </section>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-text">
+      <strong>상품 1개 선택 후 수령</strong>
+      <p>참여 완료 후 준비된 상품 중 1개를 선택해 수령하실 수 있습니다.</p>
+    </div>
+  </div>
+</div>
 
-    <section class="section fade-in">
-      <div class="verify-box">
-        <h2 class="section-title">✅ 참여 확인 도구</h2>
-        <p class="section-subtitle">이 페이지는 QR별 미션 식별용입니다. 프런트에서 미션명과 참여 조건을 확인한 후 상품 및 럭키드로우 진행 여부를 판단하시면 됩니다.</p>
-        <div class="verify-grid">
-          <button class="verify-btn" id="markVisitedBtn" type="button">이 기기에서 이 QR 참여 표시</button>
-          <button class="verify-btn alt" id="checkVisitedBtn" type="button">중복 참여 여부 확인</button>
-        </div>
-        <div class="verify-status" id="verifyStatus"></div>
-      </div>
-    </section>
+<!-- 미션 -->
+<div class="mission">
+  <h2 id="missionTitle">미션</h2>
+  <p id="missionDesc"></p>
+</div>
 
-    <footer class="footer fade-in">
-      <strong>ibis Styles Ambassador Seoul Gangnam</strong>
-      <div>© 2026 ibis Styles Ambassador Seoul Gangnam. All rights reserved.</div>
-    </footer>
-  </main>
+<div class="footer">
+  ibis Styles Ambassador Seoul Gangnam
+</div>
 
-  <script>
-    const missionMap = {
-      staff: {
-        heroDesc: '직원 서비스 관련 QR을 찾으셨습니다. 아래 미션에 맞춰 리뷰를 남겨주세요.',
-        title: '👨‍💼 이달의 우수 직원',
-        description: '체크인을 도와준 직원 또는 인상 깊었던 직원의 서비스 경험을 남겨주세요.',
-        tip: 'Tip. 친절했던 응대, 빠른 도움, 기억에 남는 서비스 등을 적어주시면 좋습니다.'
-      },
-      breakfast: {
-        heroDesc: '조식 관련 QR을 찾으셨습니다. 아래 미션에 맞춰 리뷰를 남겨주세요.',
-        title: '🍳 조식 리뷰',
-        description: '호텔 조식의 맛, 메뉴 구성, 가성비에 대해 자유롭게 평가해 주세요.',
-        tip: 'Tip. 맛있었던 메뉴, 이용 시간, 만족 포인트를 함께 적어주시면 좋습니다.'
-      },
-      location: {
-        heroDesc: '위치 관련 QR을 찾으셨습니다. 아래 미션에 맞춰 리뷰를 남겨주세요.',
-        title: '📍 호텔 위치 및 주변 시설',
-        description: '호텔의 위치, 코엑스 / 삼성역 접근성, 주변 편의시설에 대해 남겨주세요.',
-        tip: 'Tip. 이동 편의성, 주변 맛집, 출장·관광에 좋은 점을 적어주시면 좋습니다.'
-      },
-      facility: {
-        heroDesc: '부대시설 관련 QR을 찾으셨습니다. 아래 미션에 맞춰 리뷰를 남겨주세요.',
-        title: '🏨 호텔 부대 시설',
-        description: '호텔 내 세탁실, 피트니스, 편의점, Monoplex 영화관 등 편의시설 이용 경험을 공유해주세요.',
-        tip: 'Tip. 실제 이용한 시설명과 만족했던 이유를 함께 적어주시면 좋습니다.'
-      },
-      room: {
-        heroDesc: '객실 관련 QR을 찾으셨습니다. 아래 미션에 맞춰 리뷰를 남겨주세요.',
-        title: '🧹 객실 리뷰',
-        description: '객실 청소 및 하우스키핑에 대한 만족도를 공유해주세요.',
-        tip: 'Tip. 객실 상태, 정비 만족도, 청결함 등을 적어주시면 좋습니다.'
-      },
-      bedding: {
-        heroDesc: '침구 관련 QR을 찾으셨습니다. 아래 미션에 맞춰 리뷰를 남겨주세요.',
-        title: '🛏️ 침구 리뷰',
-        description: '침구 만족도에 대해서 의견 남겨주세요.',
-        tip: 'Tip. 침대 편안함, 베개·이불 만족도, 숙면 경험 등을 적어주시면 좋습니다.'
-      },
-      golden: {
-        heroDesc: '축하드립니다. Golden QR을 찾으셨습니다.',
-        title: '👑 Golden QR Special Mission',
-        description: 'Golden QR 고객은 Monoplex 영화 티켓 2매가 제공되며, 추가로 프런트 직원과 가위바위보 승리 시 QR 럭키드로우에도 도전할 수 있습니다.',
-        tip: 'Golden QR은 영화 티켓 2매 제공 + 가위바위보 승리 시 럭키드로우 참여가 가능한 특별 미션입니다.'
-      }
-    };
+</div>
 
-    const params = new URLSearchParams(window.location.search);
-    const missionKey = (params.get('mission') || 'staff').toLowerCase();
-    const currentMission = missionMap[missionKey] || missionMap.staff;
-    const isGolden = missionKey === 'golden';
-    const visitKey = `ibis_qr_${missionKey}_visited`;
+<script>
+const missionMap = {
+  staff: "직원 서비스 경험을 리뷰해주세요.",
+  breakfast: "조식 경험을 리뷰해주세요.",
+  location: "호텔 위치에 대해 리뷰해주세요.",
+  facility: "부대시설 이용 경험을 리뷰해주세요.",
+  room: "객실 청결 및 상태를 리뷰해주세요.",
+  bedding: "침구 만족도를 리뷰해주세요.",
+  golden: "Golden QR입니다. 프런트에서 혜택을 안내받으세요."
+};
 
-    document.getElementById('heroDesc').textContent = currentMission.heroDesc;
-    document.getElementById('missionTitle').textContent = currentMission.title;
-    document.getElementById('missionDescription').textContent = currentMission.description;
-    document.getElementById('missionTip').textContent = currentMission.tip;
-    document.getElementById('missionKicker').textContent = isGolden ? 'SPECIAL MISSION ACTIVE' : 'MISSION ACTIVE';
-    document.getElementById('missionSectionTitle').textContent = isGolden ? '👑 현재 특별 미션' : '🎯 현재 리뷰 미션';
-    document.getElementById('missionSubtitle').textContent = isGolden
-      ? 'Golden QR 전용 안내입니다. Monoplex 영화 티켓 2매가 제공되며, 프런트 직원과 가위바위보 승리 시 럭키드로우에도 참여하실 수 있습니다.'
-      : 'QR에 안내된 미션 주제에 맞게 리뷰를 작성해 주세요.';
+const params = new URLSearchParams(window.location.search);
+const mission = params.get("mission") || "staff";
 
-    if (isGolden) {
-      document.getElementById('goldSectionWrap').classList.remove('hidden');
-    }
+document.getElementById("missionTitle").innerText = mission;
+document.getElementById("missionDesc").innerText = missionMap[mission];
+</script>
 
-    async function copyMissionText() {
-      const text = `${currentMission.title}\n${currentMission.description}`;
-      try {
-        await navigator.clipboard.writeText(text);
-        showStatus('현재 미션 문구를 복사했습니다.', 'ok');
-      } catch (e) {
-        showStatus('복사 기능을 사용할 수 없습니다. 직접 선택해서 복사해 주세요.', 'warn');
-      }
-    }
-
-    function showStatus(message, type) {
-      const box = document.getElementById('verifyStatus');
-      box.textContent = message;
-      box.className = `verify-status show ${type}`;
-    }
-
-    function markVisited() {
-      localStorage.setItem(visitKey, new Date().toISOString());
-      showStatus(`이 기기에서 ${currentMission.title} 참여 이력이 저장되었습니다.`, 'ok');
-    }
-
-    function checkVisited() {
-      const value = localStorage.getItem(visitKey);
-      if (value) {
-        showStatus(`이미 이 기기에서 같은 QR에 접속한 기록이 있습니다. 저장 시각: ${new Date(value).toLocaleString('ko-KR')}`, 'warn');
-      } else {
-        showStatus('현재 이 기기에는 같은 QR 참여 기록이 없습니다.', 'ok');
-      }
-    }
-
-    document.getElementById('copyMissionBtn').addEventListener('click', copyMissionText);
-    document.getElementById('markVisitedBtn').addEventListener('click', markVisited);
-    document.getElementById('checkVisitedBtn').addEventListener('click', checkVisited);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade-in').forEach((el, index) => {
-      if (!el.classList.contains('visible')) {
-        el.style.transitionDelay = `${Math.min(index * 0.05, 0.25)}s`;
-      }
-      observer.observe(el);
-    });
-  </script>
 </body>
 </html>
