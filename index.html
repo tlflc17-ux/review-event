@@ -9,194 +9,560 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <style>
-body { margin:0; font-family:'Noto Sans KR',sans-serif; background:#f5f7fb; }
-.container { max-width:480px; margin:0 auto; }
-
-.hero {
-  background: linear-gradient(135deg, #6FCF97, #27AE60);
-  color:#fff; padding:30px 20px;
-  border-radius:0 0 30px 30px;
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #f5f7fb;
 }
 
-.section { padding:20px; }
-.title { font-size:20px; font-weight:900; margin-bottom:15px; }
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* 상단 */
+.hero {
+  background: linear-gradient(135deg, #6FCF97, #27AE60);
+  color: #fff;
+  padding: 30px 20px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.hero p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 참여방법 */
+.section {
+  padding: 20px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 15px;
+}
 
 .step {
-  display:flex; gap:15px; background:#fff;
-  padding:18px; border-radius:20px;
-  margin-bottom:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  gap: 15px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
 .step-num {
-  width:50px;height:50px;
-  background:linear-gradient(135deg,#ff3b3b,#ff1f1f);
-  color:#fff;border-radius:15px;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:900;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background: linear-gradient(135deg, #ff3b3b, #ff1f1f);
+  color: #fff;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
 }
 
-.step-text p { margin:0; font-size:14px; color:#666; }
+.step-text strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 4px;
+}
 
+.step-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* 버튼 */
 .review-btn {
-  display:block;width:90%;margin:10px auto 20px;
-  padding:16px;border-radius:20px;
-  text-align:center;color:#fff;font-weight:900;
-  background:linear-gradient(135deg,#6FCF97,#27AE60);
-  text-decoration:none;
+  display: block;
+  width: 90%;
+  margin: 10px auto 20px;
+  padding: 16px;
+  border-radius: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  background: linear-gradient(135deg, #6FCF97, #27AE60);
+  text-decoration: none;
 }
 
+/* 상품 */
 .product-box {
-  background:#fff;margin:20px;padding:20px;
-  border-radius:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.05);
+  background: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-.product-note { font-size:12px;color:#888; }
-
-#goldenBonus, #goldenBonusEn {
-  display:none;
-  margin-top:15px;padding:12px;border-radius:12px;
-  background:linear-gradient(135deg,#fff6cc,#ffe082);
-  font-size:13px;font-weight:700;color:#5a4300;
+.product-box h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 900;
 }
 
-.footer { text-align:center;padding:30px;font-size:12px;color:#888; }
+.product-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.8;
+}
 
+.product-note {
+  margin-top: 10px !important;
+  font-size: 12px !important;
+  color: #888 !important;
+}
+
+/* Golden 보너스 */
+#goldenBonus,
+#goldenBonusEn {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fff6cc, #ffe082);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: #5a4300;
+}
+
+/* 강조 */
+#missionText b,
+#missionTextEn b {
+  font-weight: 900;
+  color: #ff3b3b;
+}
+
+/* 언어 구분선 */
+.lang-divider {
+  max-width: 480px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+}
+
+.lang-divider .label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  color: #888;
+  letter-spacing: 1px;
+  margin: 10px 0;
+}
+
+/* 푸터 */
+.footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* Golden popup */
 #goldenPopup {
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:9999;align-items:center;justify-content:center;
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
 }
 
 .popup-box {
-  background:#fff;padding:30px;border-radius:20px;text-align:center;
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  width: 85%;
+  max-width: 320px;
+  animation: popIn 0.35s ease;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.22);
 }
 
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.82) translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* 중앙 펑 이펙트 */
 #burstFlash {
-  position:fixed;left:50%;top:42%;
-  width:24px;height:24px;border-radius:999px;
-  transform:translate(-50%,-50%) scale(0.2);
-  opacity:0;z-index:9998;
-  background:radial-gradient(circle,#ffd700,transparent);
+  position: fixed;
+  left: 50%;
+  top: 42%;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  transform: translate(-50%, -50%) scale(0.2);
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(255,230,120,0.95) 0%, rgba(255,193,7,0.6) 35%, rgba(255,193,7,0.18) 60%, rgba(255,193,7,0) 75%);
 }
 
 #burstFlash.active {
-  animation:burst 0.7s ease-out forwards;
+  animation: burstRing 0.75s ease-out forwards;
 }
 
-@keyframes burst {
-  0% {opacity:1;transform:translate(-50%,-50%) scale(0.5);}
-  100% {opacity:0;transform:translate(-50%,-50%) scale(6);}
+@keyframes burstRing {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(7.5);
+  }
 }
 </style>
 </head>
 
 <body>
+  <!-- 한국어 버전 -->
+  <div class="container">
 
-<div class="container">
-
-  <div class="hero">
-    <h1>ibis Styles Ambassador Seoul Gangnam</h1>
-    <p id="heroDesc"></p>
-  </div>
-
-  <div class="section">
-    <div class="title">🗺 참여 방법</div>
-
-    <div class="step"><div class="step-num">1</div><div>QR 찾기</div></div>
-    <div class="step"><div class="step-num">2</div><div id="missionText"></div></div>
-    <div class="step"><div class="step-num">3</div><div>프런트에 보여주기</div></div>
-    <div class="step"><div class="step-num">4</div><div>상품 수령</div></div>
-  </div>
-
-  <a class="review-btn" href="#">Google Review 작성하기</a>
-
-  <div class="product-box">
-    <h2>🎁 참여 상품 (택 1)</h2>
-    <p>Oxford Lego / ibis 타월 / 키링 / 마그넷 등</p>
-
-    <div id="goldenBonus">
-      🎲 Golden QR 보너스<br>
-      가위바위보 승리 시 럭키드로우 1회 추가 제공
+    <div class="hero">
+      <h1>ibis Styles Ambassador Seoul Gangnam</h1>
+      <p id="heroDesc">QR 미션을 확인해 주세요.</p>
     </div>
 
-    <p class="product-note">※ 상품 변동 가능</p>
-  </div>
+    <div class="section">
+      <div class="title">🗺 참여 방법</div>
 
-</div>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>호텔 내 숨겨진 QR 코드 찾기</strong>
+          <p>호텔 곳곳을 둘러보며 숨겨진 QR 코드를 찾아주세요.</p>
+        </div>
+      </div>
 
-<!-- 영어 영역 -->
-<div class="container">
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>QR 스캔 후 Google 리뷰 작성</strong>
+          <p id="missionText"></p>
+        </div>
+      </div>
 
-  <div class="hero">
-    <h1>ibis Styles Ambassador Seoul Gangnam</h1>
-    <p id="heroDescEn"></p>
-  </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>리뷰 화면을 프런트 직원에게 보여주기</strong>
+          <p>작성된 리뷰 화면을 직원에게 보여주세요.</p>
+        </div>
+      </div>
 
-  <div class="section">
-    <div class="title">How to Participate</div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>상품 1개 선택 후 수령</strong>
+          <p>참여 완료 후 상품 1개를 선택해 수령하실 수 있습니다.</p>
+        </div>
+      </div>
+    </div>
 
-    <div class="step"><div class="step-num">1</div><div>Find QR</div></div>
-    <div class="step"><div class="step-num">2</div><div id="missionTextEn"></div></div>
-    <div class="step"><div class="step-num">3</div><div>Show to Front Desk</div></div>
-    <div class="step"><div class="step-num">4</div><div>Receive Gift</div></div>
-  </div>
+    <a
+      class="review-btn"
+      href="https://www.google.com/maps/place/?q=ibis+styles+ambassador+seoul+gangnam"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Google Review 작성하기
+    </a>
 
-  <div class="product-box">
-    <h2>🎁 Gift</h2>
+    <div class="product-box">
+      <h2>🎁 참여 상품 (택 1)</h2>
+      <p>
+        Oxford Lego / ibis 타월 / 여권 케이스 / 키링 / 마그넷 /
+        Welcome Drink 2잔 / Late Check-out / 무료 주차 / 객실 업그레이드 / 에코백
+      </p>
 
-    <div id="goldenBonusEn">
-      🎲 Golden QR Bonus<br>
-      Win Rock–Paper–Scissors to get extra draw
+      <p id="goldenBonus">
+        🎲 <b>Golden QR 보너스</b><br>
+        프런트 직원과 가위바위보에서 승리 시<br>
+        럭키드로우 1회 추첨권이 추가 제공됩니다.
+      </p>
+
+      <p class="product-note">※ 상품은 재고 상황에 따라 변경될 수 있습니다.</p>
+    </div>
+
+    <div class="footer">
+      ibis Styles Ambassador Seoul Gangnam
     </div>
   </div>
 
-</div>
-
-<div id="burstFlash"></div>
-
-<div id="goldenPopup">
-  <div class="popup-box">
-    <h2>🏆 Golden QR!</h2>
-    <button onclick="closePopup()">OK</button>
+  <div class="lang-divider">
+    <div class="label">ENGLISH VERSION</div>
   </div>
-</div>
+
+  <!-- 영어 버전 -->
+  <div class="container">
+
+    <div class="hero">
+      <h1>ibis Styles Ambassador Seoul Gangnam</h1>
+      <p id="heroDescEn">Please check your QR mission.</p>
+    </div>
+
+    <div class="section">
+      <div class="title">🗺 How to Participate</div>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">
+          <strong>Find hidden QR codes in the hotel</strong>
+          <p>Please explore the hotel and find the hidden QR codes.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">
+          <strong>Scan the QR code and write a Google review</strong>
+          <p id="missionTextEn"></p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">
+          <strong>Show your review screen to the Front Desk staff</strong>
+          <p>Please present the completed review screen to our staff.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <strong>Select and receive 1 gift</strong>
+          <p>After participation, you may choose and receive one gift.</p>
+        </div>
+      </div>
+    </div>
+
+    <a
+      class="review-btn"
+      href="https://www.google.com/maps/place/?q=ibis+styles+ambassador+seoul+gangnam"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Write a Google Review
+    </a>
+
+    <div class="product-box">
+      <h2>🎁 Participation Gift (Choose 1)</h2>
+      <p>
+        Oxford Lego / ibis towel / passport case / keyring / magnet /
+        2 Welcome Drinks / Late Check-out / Free Parking / Room Upgrade / Eco Bag
+      </p>
+
+      <p id="goldenBonusEn">
+        🎲 <b>Golden QR Bonus</b><br>
+        Win Rock–Paper–Scissors against our Front Desk staff<br>
+        and receive 1 extra lucky draw entry.
+      </p>
+
+      <p class="product-note">※ Gifts are subject to change depending on stock availability.</p>
+    </div>
+
+    <div class="footer">
+      ibis Styles Ambassador Seoul Gangnam
+    </div>
+  </div>
+
+  <div id="burstFlash"></div>
+
+  <div id="goldenPopup">
+    <div class="popup-box">
+      <div style="font-size:46px;">🏆</div>
+      <h2 style="margin:10px 0 5px; font-size:22px; font-weight:900;">
+        황금 QR 당첨!
+      </h2>
+      <p style="font-size:14px; line-height:1.7; margin:0;">
+        축하드립니다.<br>
+        프런트에서 특별 혜택을 안내받아 주세요.
+      </p>
+      <button onclick="closePopup()" style="
+        margin-top:15px;
+        background:#f4c542;
+        border:none;
+        border-radius:999px;
+        padding:12px 20px;
+        font-weight:800;
+        cursor:pointer;
+      ">
+        확인
+      </button>
+    </div>
+  </div>
 
 <script>
-const params = new URLSearchParams(location.search);
-const mission = params.get("mission") || "staff";
+const missionMap = {
+  staff: "<b>체크인을 도와준 직원 또는 인상 깊었던 직원의 서비스 경험을 남겨주세요.</b>",
+  breakfast: "<b>호텔 조식의 맛, 메뉴 구성, 가성비에 대해 자유롭게 평가해 주세요.</b>",
+  location: "<b>호텔의 위치, 코엑스 / 삼성역 접근성, 주변 편의시설에 대해 남겨주세요.</b>",
+  facility: "<b>호텔 내 부대시설 이용 경험을 공유해주세요.</b>",
+  room: "<b>객실 청결 및 상태를 리뷰해주세요.</b>",
+  bedding: "<b>침구 만족도를 작성해주세요.</b>",
+  golden: "<b>Golden QR입니다. 프런트에서 특별 혜택을 안내받아 주세요.</b>"
+};
 
 const heroMap = {
+  staff: "직원 서비스 관련 QR을 찾으셨습니다.",
+  breakfast: "조식 관련 QR을 찾으셨습니다.",
+  location: "위치 관련 QR을 찾으셨습니다.",
+  facility: "부대시설 관련 QR을 찾으셨습니다.",
+  room: "객실 관련 QR을 찾으셨습니다.",
+  bedding: "침구 관련 QR을 찾으셨습니다.",
   golden: "축하드립니다. Golden QR을 찾으셨습니다."
 };
 
-const heroMapEn = {
-  golden: "Congratulations! You found a Golden QR."
+const missionMapEn = {
+  staff: "<b>Please share your experience with the staff member who assisted you or left a strong impression.</b>",
+  breakfast: "<b>Please freely review the taste, variety, and value of the hotel breakfast.</b>",
+  location: "<b>Please tell us about the hotel location, access to COEX / Samseong Station, and nearby convenience.</b>",
+  facility: "<b>Please share your experience using the hotel facilities.</b>",
+  room: "<b>Please review the cleanliness and condition of your room.</b>",
+  bedding: "<b>Please tell us about your satisfaction with the bedding.</b>",
+  golden: "<b>This is a Golden QR. Please visit the Front Desk for special benefits.</b>"
 };
 
+const heroMapEn = {
+  staff: "You found a Staff Service QR.",
+  breakfast: "You found a Breakfast QR.",
+  location: "You found a Location QR.",
+  facility: "You found a Facility QR.",
+  room: "You found a Room QR.",
+  bedding: "You found a Bedding QR.",
+  golden: "Congratulations. You found a Golden QR."
+};
+
+const params = new URLSearchParams(window.location.search);
+const mission = params.get("mission") || "staff";
+
+document.getElementById("missionText").innerHTML =
+  "아래 미션에 맞춰 리뷰를 작성해 주세요.<br>👉 " +
+  (missionMap[mission] || missionMap.staff);
+
 document.getElementById("heroDesc").innerText =
-  heroMap[mission] || "QR 미션을 확인해 주세요.";
+  heroMap[mission] || heroMap.staff;
+
+document.getElementById("missionTextEn").innerHTML =
+  "Please write your review based on the mission below.<br>👉 " +
+  (missionMapEn[mission] || missionMapEn.staff);
 
 document.getElementById("heroDescEn").innerText =
-  heroMapEn[mission] || "Check your QR mission.";
+  heroMapEn[mission] || heroMapEn.staff;
 
-function runGoldenEffect(){
-  document.getElementById("burstFlash").classList.add("active");
-
-  confetti({particleCount:200,spread:120});
-
-  document.getElementById("goldenPopup").style.display="flex";
+function triggerBurstFlash() {
+  const burst = document.getElementById("burstFlash");
+  burst.classList.remove("active");
+  void burst.offsetWidth;
+  burst.classList.add("active");
 }
 
-function closePopup(){
-  document.getElementById("goldenPopup").style.display="none";
+function closePopup() {
+  document.getElementById("goldenPopup").style.display = "none";
 }
 
-if(mission==="golden"){
-  document.getElementById("goldenBonus").style.display="block";
-  document.getElementById("goldenBonusEn").style.display="block";
-  setTimeout(runGoldenEffect,500);
+function runGoldenEffect() {
+  triggerBurstFlash();
+
+  confetti({
+    particleCount: 260,
+    spread: 120,
+    startVelocity: 60,
+    scalar: 1.2,
+    ticks: 220,
+    origin: { x: 0.5, y: 0.45 }
+  });
+
+  setTimeout(() => {
+    confetti({
+      particleCount: 140,
+      angle: 60,
+      spread: 80,
+      startVelocity: 55,
+      ticks: 200,
+      origin: { x: 0.04, y: 0.6 }
+    });
+
+    confetti({
+      particleCount: 140,
+      angle: 120,
+      spread: 80,
+      startVelocity: 55,
+      ticks: 200,
+      origin: { x: 0.96, y: 0.6 }
+    });
+  }, 120);
+
+  setTimeout(() => {
+    confetti({
+      particleCount: 180,
+      spread: 100,
+      startVelocity: 38,
+      ticks: 240,
+      origin: { x: 0.5, y: 0.08 }
+    });
+  }, 260);
+
+  setTimeout(() => {
+    confetti({
+      particleCount: 90,
+      spread: 70,
+      startVelocity: 45,
+      origin: { x: 0.35, y: 0.45 }
+    });
+    confetti({
+      particleCount: 90,
+      spread: 70,
+      startVelocity: 45,
+      origin: { x: 0.65, y: 0.45 }
+    });
+  }, 420);
+
+  if (navigator.vibrate) {
+    navigator.vibrate([120, 60, 120, 60, 180]);
+  }
+
+  setTimeout(() => {
+    document.getElementById("goldenPopup").style.display = "flex";
+  }, 900);
+}
+
+if (mission === "golden") {
+  document.getElementById("goldenBonus").style.display = "block";
+  document.getElementById("goldenBonusEn").style.display = "block";
+  setTimeout(runGoldenEffect, 450);
 }
 </script>
 
