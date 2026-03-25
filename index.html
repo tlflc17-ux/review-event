@@ -359,7 +359,7 @@ const params = new URLSearchParams(window.location.search);
 const mission = params.get("mission") || "staff";
 
 document.getElementById("missionText").innerHTML =
-  "현재 페이지에 보이는 미션에 맞춰 리뷰를 작성해 주세요.<br>👉 " +
+  "아래 미션에 맞춰 리뷰를 작성해 주세요.<br>👉 " +
   (missionMap[mission] || missionMap.staff);
 
 document.getElementById("heroDesc").innerText =
